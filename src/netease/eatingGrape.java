@@ -1,5 +1,6 @@
 package netease;
 
+import java.util.Arrays;
 import java.util.Scanner;
 /**
  * @author pandaxubo
@@ -38,28 +39,24 @@ public class eatingGrape {
         Scanner in = new Scanner(System.in);
         while (in.hasNext()) {
             int num = in.nextInt();
-            int[][] g = new int[num][3];
-            for (int i=0;i< num;i++){
-                g[i][0] = in.nextInt();
-                g[i][1] = in.nextInt();
-                g[i][2] = in.nextInt();
-
+            long[][] g = new long[num][3];//当心数组越界
+            long c1,c2;
+            for (int i = 0; i < num; i++) {
+                g[i][0] = in.nextLong();
+                g[i][1] = in.nextLong();
+                g[i][2] = in.nextLong();
+                Arrays.sort(g[i]);
             }
-            for (int i=0;i< num;i++){
-                int avg = (g[i][0]+g[i][1]+g[i][2])%3;
-                if(avg == 0){
-                    System.out.println((g[i][0]+g[i][1]+g[i][2])/3);
-                }
-                else if(avg == 1){
-                    System.out.println((g[i][0]+g[i][1]+g[i][2])/3+1);
-                }
-                else if(avg == 2){
-                    System.out.println((g[i][0]+g[i][1]+g[i][2])/3+1);
-                }
+            for (int j = 0; j< num; j++) {
+                c1 = (g[j][0]+g[j][1]+g[j][2] +2) /3;
+                c2 = (g[j][2]+1)/2;
+                //只有两种情况：
+                //两个人吃完长边后不再吃短边，第三人吃完短边也没有超出另两个人；
+                //两人吃完长边后，如果不帮第三人吃两个短边，会使第三人吃的超过2人。
+                //第一种情况的输出就是长边的1/2；第二种情况则与三角形情况相同，需要所有人均分。
+
+                System.out.println(Math.max(c1,c2));
             }
-
-
         }
     }
-
 }
