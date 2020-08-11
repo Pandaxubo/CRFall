@@ -5,17 +5,61 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (in.hasNext()) {
-            int nexti = in.nextInt();
-            int count = 0;
-            while(Integer.parseInt(Integer.toBinaryString(count)) <= nexti){
-                count++;
+            int num = in.nextInt();
+            int[][] g = new int[num][3];
+            for (int i=0;i< num;i++){
+                g[i][0] = in.nextInt();
+                g[i][1] = in.nextInt();
+                g[i][2] = in.nextInt();
+
             }
-            System.out.println(count);
+            for (int i=0;i< num;i++){
+                int avg = (g[i][0]+g[i][1]+g[i][2])%3;
+                if(avg == 0){
+                    System.out.println((g[i][0]+g[i][1]+g[i][2])/3);
+                }
+                else if(avg == 1){
+                    System.out.println((g[i][0]+g[i][1]+g[i][2])/3+1);
+                }
+                else if(avg == 2){
+                    System.out.println((g[i][0]+g[i][1]+g[i][2])/3+1);
+                }
+            }
+
+
         }
     }
 
-
 }
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner in = new Scanner(System.in);
+//        while (in.hasNext()) {
+//            int nexti = in.nextInt();
+//            int count = 0;
+//            while(Integer.parseInt(Integer.toBinaryString(count)) <= nexti){
+//                count++;
+//            }
+//            System.out.println(count);
+//        }
+//    }
+//
+//
+//}
 
 
 
