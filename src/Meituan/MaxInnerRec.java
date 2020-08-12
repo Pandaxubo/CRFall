@@ -18,8 +18,8 @@ public class MaxInnerRec {
         int res = 0;
         int width = 1;
         int cur = 0;
-        int left = 0;
-        int right = 0;
+        int left;
+        int right;
         while(cur <n){
             left = cur == 0 ? -1 : cur-1;
             right = cur == n-1 ? n : cur+1;
