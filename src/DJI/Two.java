@@ -1,4 +1,4 @@
-package dji;
+package DJI;
 
 import java.util.ArrayList;
 import java.util.Scanner;

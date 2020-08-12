@@ -1,4 +1,4 @@
-package netease;
+package Netease;
 
 import java.util.Arrays;
 import java.util.Scanner;
