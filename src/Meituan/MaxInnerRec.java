@@ -20,7 +20,7 @@ public class MaxInnerRec {
         int cur = 0;
         int left;
         int right;
-        while(cur <n){
+        while(cur <n){//从每一个cur找左右边界
             left = cur == 0 ? -1 : cur-1;
             right = cur == n-1 ? n : cur+1;
             while(left >= 0 && A[left] >= A[cur]){
