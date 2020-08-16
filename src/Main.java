@@ -1,4 +1,5 @@
 
+/////////////////////////////////////////////////////////////////////////
 import java.util.Scanner;
 
 public class Main {
@@ -45,7 +46,7 @@ public class Main {
 ///////////////////////////////////////////////////////////////////////
 //import java.util.Scanner;
 //
-//public class Main {
+//public class Qianxin.Main {
 //    public static void main(String[] args) {
 //        Scanner in = new Scanner(System.in);
 //        while (in.hasNext()) {
@@ -69,7 +70,7 @@ public class Main {
 
 
 //import java.util.Scanner;
-//public class Main {
+//public class Qianxin.Main {
 //    public static void main(String[] args) {
 //        int num,count;
 //        Scanner input = new Scanner(System.in);
@@ -182,4 +183,3 @@ public class Main {
 //    }
 //    return isokk;
 //}
-
