@@ -11,7 +11,6 @@ public class ExtendedBinarySearch {
     public static void main(String[] args){
         int[] arr = {17,19,20,25,1,4,7,9};
         int x = 20;
-        System.out.println("test");
         System.out.println(modifiedBS(arr,x));
     }
     public static int modifiedBS(int[] arr, int tar){
