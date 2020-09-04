@@ -29,6 +29,9 @@ public class Archery {
         // 总分40分，射箭5次，每次0~10分
         List<List<Integer>> res = combine(n, m, 10);
         System.out.println(res.size());
+//        for (List<Integer> list : res) {
+//            System.out.println(list);
+//        }
     }
 
     /**
