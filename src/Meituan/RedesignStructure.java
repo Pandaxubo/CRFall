@@ -47,18 +47,31 @@ import java.util.Scanner;
  * 对于第二组样例，无法构造出符合题目要求的关系。注意每个有下属的人至少有2个直接下属。
  */
 public class RedesignStructure {
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        while(in.hasNext()){
+        while (in.hasNext()) {
             int n = in.nextInt();
-            int[] a = new int[n];
-            for(int i =0; i< n;i++){
-                a[i] = in.nextInt();
+            boolean flag = false;
+
+            int[] arr = new int[n];
+            for (int i = 0; i < n; i++) {
+                arr[i] = in.nextInt();
             }
-            if(n % 2 ==1 ){
+            int empcnt = 0;
+            for (int a : arr) {
+                if (a == 1) {
+                    empcnt++;
+                } else {
+                    if (a == empcnt + 1 && a > 2 && a == n) {
+                        flag = true;
+                    }
+                }
+
+            }
+            if (flag) {
                 System.out.println("YES");
-            }
-            if(n % 2 ==0 ){
+            } else {
                 System.out.println("NO");
             }
         }

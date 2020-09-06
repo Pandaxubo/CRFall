@@ -55,7 +55,7 @@ public class NewQueue {
             for(int qq = 0;qq<m;qq++){
                 int i = in.nextInt();
                 if (list.contains(i)) {
-                    list.remove(list.indexOf(i));
+                    list.remove((Integer) i );
                 }
                 list.add(i);
             }

@@ -40,87 +40,35 @@ import java.util.Scanner;
  * 提示
  * 1,2号土地只有A想要，4,5号土地只有B想要，3号土地都想要
  */
-public class ChooseField {
-    public static void main(String[] args){
+public class ChooseField {//该题求交集大小。可以直接构造一个set存第一组数据，遍历第二组数据给出count，在打印即可。
+
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        while(in.hasNext()){
-            int n = in.nextInt();
+        while (in.hasNext()) {
             int p = in.nextInt();
             int q = in.nextInt();
-            HashSet<Integer> a = new HashSet<Integer>();
-            HashSet<Integer> b = new HashSet<Integer>();
-            int onlya = 0;
-            int onlyb = 0;
-            int both = 0;
-            for(int i = 0; i< p;i++){
+            HashSet<Integer> a = new HashSet<>();
+            HashSet<Integer> b = new HashSet<>();
+            int onlya;
+            int onlyb;
+            int both;
+            for (int i = 0; i < p; i++) {
                 a.add(in.nextInt());
             }
             int oa = a.size();
-            for(int j = 0; j< q;j++){
+            for (int j = 0; j < q; j++) {
                 b.add(in.nextInt());
             }
             int ob = b.size();
             a.retainAll(b);
-            int [] output = new int[a.size()];
+            int[] output = new int[a.size()];
             int idx = 0;
             for (int s : a) output[idx++] = s;
             both = output.length;
             onlya = oa - both;
             onlyb = ob - both;
-            System.out.println(onlya+ " "+onlyb+" "+both);
+            System.out.println(onlya + " " + onlyb + " " + both);
         }
+    }
 }
 
-//    public static int intersection(int[] nums1, int[] nums2) {
-//        HashSet<Integer> set1 = new HashSet<Integer>();
-//        for (Integer n : nums1) set1.add(n);
-//        HashSet<Integer> set2 = new HashSet<Integer>();
-//        for (Integer n : nums2) set2.add(n);
-//
-//        set1.retainAll(set2);
-//
-//        int [] output = new int[set1.size()];
-//        int idx = 0;
-//        for (int s : set1) output[idx++] = s;
-//        return output.length;
-//    }
-}
-
-//    public static void main(String[] args){
-//        Scanner in = new Scanner(System.in);
-//        while(in.hasNext()){
-//            int n = in.nextInt();
-//            int p = in.nextInt();
-//            int q = in.nextInt();
-//            int[] a = new int[p];
-//            int[] b = new int[q];
-//            int onlya = 0;
-//            int onlyb = 0;
-//            int both = 0;
-//            for(int i = 0; i< p;i++){
-//                a[i] = in.nextInt();
-//            }
-//            for(int j = 0; j< q;j++){
-//                b[j] = in.nextInt();
-//            }
-//            both = intersection(a,b);
-//            onlya = a.length - both;
-//            onlyb = b.length - both;
-//            System.out.println(onlya+ " "+onlyb+" "+both);
-//        }
-//
-//    }
-//
-//    public static int intersection(int[] nums1, int[] nums2) {
-//        HashSet<Integer> set1 = new HashSet<Integer>();
-//        for (Integer n : nums1) set1.add(n);
-//        HashSet<Integer> set2 = new HashSet<Integer>();
-//        for (Integer n : nums2) set2.add(n);
-//
-//        set1.retainAll(set2);
-//
-//        int [] output = new int[set1.size()];
-//        int idx = 0;
-//        for (int s : set1) output[idx++] = s;
-//        return output.length;
-//    }
