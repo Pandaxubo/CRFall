@@ -53,7 +53,6 @@ public class RedesignStructure {
         while (in.hasNext()) {
             int n = in.nextInt();
             boolean flag = false;
-
             int[] arr = new int[n];
             for (int i = 0; i < n; i++) {
                 arr[i] = in.nextInt();
