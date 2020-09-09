@@ -1,51 +1,42 @@
 package Practice;
 
+import java.util.Arrays;
+
 public class QuickSort {
+
+    private static void quickSort(int[] a, int low, int high) {
+        if (low >= high) {
+            return;
+        }
+        int pivot = partition(a, low, high);
+        quickSort(a, low, pivot - 1);
+        quickSort(a, pivot + 1, high);
+    }
+
+    private static int partition(int[] a, int low, int high) {
+        int pivot = low;
+        int index = pivot + 1;
+        for (int i = index; i <= high; i++) {
+            if (a[i] < a[pivot]) {
+                swap(a, i, index);
+                index++;
+            }
+
+        }
+        swap(a, pivot, index - 1);
+        return index - 1;
+    }
+
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
     public static void main(String[] args) {
-        int[] a = new int[]{2,7,4,5,10,1,9,3,8,6};
-        int[] b = new int[]{1,2,3,4,5,6,7,8,9,10};
-        int[] c = new int[]{10,9,8,7,6,5,4,3,2,1};
-        int[] d = new int[]{1,10,2,9,3,2,4,7,5,6};
 
-        sort(a, 0, a.length-1);
-
-        System.out.println("排序后的结果：");
-        for(int x : a){
-            System.out.print(x+" ");
-        }
-
-    }
-    public static int partition(int[] arr,int start,int end){
-        int pivot = arr[end];//pivot
-        while(start < end){
-            while(start < end && arr[start] <= pivot){
-                start++;
-            }
-            if(start < end){
-                int temp= 0;
-                temp = arr[start];
-                arr[start] = arr[end];
-                arr[end] = temp;
-                end--;//pivot占位
-            }
-            while(start< end && arr[end] >= pivot){
-                end--;
-            }
-            if(start < end){
-                int tem= 0;
-                tem = arr[start];
-                arr[start] = arr[end];
-                arr[end] = tem;
-                start++;//pivot占位
-            }
-        }
-        return end;
-    }
-
-    public static void sort(int[] arr,int start, int end){
-        if(start > end){return;}
-        int pivot = partition(arr,start,end);
-        sort(arr, start, pivot-1);
-        sort(arr, pivot+1,end);
+        int[] a = {49, 38, 65, 97, 76, 13, 27, 49};
+        quickSort(a, 0, a.length - 1);
+        System.out.println(Arrays.toString(a));
     }
 }
