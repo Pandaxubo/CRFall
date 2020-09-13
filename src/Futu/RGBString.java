@@ -54,14 +54,41 @@ public class RGBString {
             return "null";
         }
         char[] arr = s.toCharArray();
-        int low = 0;
-        int high = arr.length;
-        int r = -1;
-        int g = -1;
-        for(int i = low;i <= high;i++){
-
+//        int high = arr.length;
+//        int r = -1;
+//        int g = -1;
+//        for(int i = 0;i < high;i++){
+//            if (arr[i] == 'R') {  //这是遇到R的情况
+//                swap(arr, ++r, i);
+//                ++g;
+//                if (arr[i] == 'G')
+//                    swap(arr, g, i);
+//            } else if (arr[i] == 'G') { //这是遇到G的情况
+//                swap(arr, ++g, i);
+//            }
+//        }
+        int len = arr.length;
+        int r =-1;
+        int g=-1;
+        for(int i =0;i<len;i++){
+            if(arr[i] == 'R'){
+                swap(arr, ++r, i);
+                ++g;
+                if(arr[i] == 'G'){
+                    swap(arr, g ,i);
+                }
+            }
+            else if(arr[i] == 'G'){
+                swap(arr, ++g,i);
+            }
         }
         return String.valueOf(arr);
+    }
+
+    private static void swap(char[] arr, int i, int j){
+        char temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
     private static String RGBSort3(String s) {
