@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class QuickSort {
 
-    private static void quickSort(int[] a, int low, int high) {
+    public static void quickSort(int[] a, int low, int high) {
         if (low >= high) {
             return;
         }
