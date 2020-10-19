@@ -59,8 +59,8 @@ public class CircularQueue {
         System.out.println("Front: "+ q.Front());
         System.out.println("Rear: "+ q.Rear());
     }
-
-    static class MyQueue {
+}
+class MyQueue {
         int[] queue;
         int cap;
         int count;
@@ -107,4 +107,4 @@ public class CircularQueue {
             return (this.count == this.cap);
         }
     }
-}
+

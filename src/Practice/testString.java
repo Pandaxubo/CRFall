@@ -25,5 +25,6 @@ public class testString {
         //System.out.println(String.format(score,"John", 81.4));
         System.out.printf((score) + "%n", "John", 81.4);
         System.out.println(kkk);
+
     }
 }
